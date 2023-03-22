@@ -9,7 +9,7 @@ import SwiftUI
 // View를 만들 지 않아도, 스유에서는 Color 속성을 이용할 수 있다.
 // 스유에서는 Color를 View 계층에 넣을 수 있는 View 인스턴트처럼 대한다.
 
-enum Theme: String, Codable {
+enum Theme: String, CaseIterable, Identifiable {
     case bubblegum
     case buttercup
     case indigo
@@ -29,8 +29,8 @@ enum Theme: String, Codable {
     
     var accentColor: Color {
         switch self {
-        case .indigo, .magenta, .navy, .oxblood, .purple: return .white
         case .bubblegum, .buttercup, .lavender, .orange, .periwinkle, .poppy, .seafoam, .sky, .tan, .teal, .yellow: return .black
+        case .indigo, .magenta, .navy, .oxblood, .purple: return .white
         }
     }
     
@@ -39,5 +39,8 @@ enum Theme: String, Codable {
     }
     var name: String {
         rawValue.capitalized
+    }
+    var id: String {
+        name
     }
 }

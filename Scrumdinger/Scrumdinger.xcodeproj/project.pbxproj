@@ -17,6 +17,9 @@
 		4AC4210629CACCBC004ED6A0 /* TrailingIconLabelStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4210529CACCBC004ED6A0 /* TrailingIconLabelStyle.swift */; };
 		4AC4210829CAD145004ED6A0 /* ScrumsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4210729CAD145004ED6A0 /* ScrumsView.swift */; };
 		4AC4210A29CADD21004ED6A0 /* DetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4210929CADD21004ED6A0 /* DetailView.swift */; };
+		4AC4210C29CAEE23004ED6A0 /* DetailEditView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4210B29CAEE23004ED6A0 /* DetailEditView.swift */; };
+		4AC4210E29CAF2D5004ED6A0 /* ThemeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4210D29CAF2D5004ED6A0 /* ThemeView.swift */; };
+		4AC4211029CAF388004ED6A0 /* ThemePicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4AC4210F29CAF388004ED6A0 /* ThemePicker.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -31,6 +34,9 @@
 		4AC4210529CACCBC004ED6A0 /* TrailingIconLabelStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailingIconLabelStyle.swift; sourceTree = "<group>"; };
 		4AC4210729CAD145004ED6A0 /* ScrumsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrumsView.swift; sourceTree = "<group>"; };
 		4AC4210929CADD21004ED6A0 /* DetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailView.swift; sourceTree = "<group>"; };
+		4AC4210B29CAEE23004ED6A0 /* DetailEditView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailEditView.swift; sourceTree = "<group>"; };
+		4AC4210D29CAF2D5004ED6A0 /* ThemeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemeView.swift; sourceTree = "<group>"; };
+		4AC4210F29CAF388004ED6A0 /* ThemePicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ThemePicker.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,9 +53,6 @@
 		4AC420E229CAC437004ED6A0 = {
 			isa = PBXGroup;
 			children = (
-				4AC4210929CADD21004ED6A0 /* DetailView.swift */,
-				4AC4210729CAD145004ED6A0 /* ScrumsView.swift */,
-				4AC4210529CACCBC004ED6A0 /* TrailingIconLabelStyle.swift */,
 				4AC420ED29CAC437004ED6A0 /* Scrumdinger */,
 				4AC420EC29CAC437004ED6A0 /* Products */,
 			);
@@ -68,10 +71,16 @@
 			children = (
 				4AC420FC29CAC7A1004ED6A0 /* Models */,
 				4AC420EE29CAC437004ED6A0 /* ScrumdingerApp.swift */,
+				4AC4210129CAC93A004ED6A0 /* CardView.swift */,
+				4AC4210F29CAF388004ED6A0 /* ThemePicker.swift */,
+				4AC4210D29CAF2D5004ED6A0 /* ThemeView.swift */,
+				4AC4210B29CAEE23004ED6A0 /* DetailEditView.swift */,
+				4AC4210929CADD21004ED6A0 /* DetailView.swift */,
+				4AC4210729CAD145004ED6A0 /* ScrumsView.swift */,
+				4AC4210529CACCBC004ED6A0 /* TrailingIconLabelStyle.swift */,
 				4AC420F029CAC437004ED6A0 /* MeetingView.swift */,
 				4AC4210329CACBA0004ED6A0 /* Assets.xcassets */,
 				4AC420F429CAC43A004ED6A0 /* Preview Content */,
-				4AC4210129CAC93A004ED6A0 /* CardView.swift */,
 			);
 			path = Scrumdinger;
 			sourceTree = "<group>";
@@ -163,13 +172,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				4AC4211029CAF388004ED6A0 /* ThemePicker.swift in Sources */,
 				4AC4210029CAC8AE004ED6A0 /* DailyScrum.swift in Sources */,
 				4AC4210A29CADD21004ED6A0 /* DetailView.swift in Sources */,
+				4AC4210C29CAEE23004ED6A0 /* DetailEditView.swift in Sources */,
 				4AC4210629CACCBC004ED6A0 /* TrailingIconLabelStyle.swift in Sources */,
 				4AC420FE29CAC7B8004ED6A0 /* Theme.swift in Sources */,
 				4AC4210829CAD145004ED6A0 /* ScrumsView.swift in Sources */,
 				4AC420F129CAC437004ED6A0 /* MeetingView.swift in Sources */,
 				4AC420EF29CAC437004ED6A0 /* ScrumdingerApp.swift in Sources */,
+				4AC4210E29CAF2D5004ED6A0 /* ThemeView.swift in Sources */,
 				4AC4210229CAC93A004ED6A0 /* CardView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
