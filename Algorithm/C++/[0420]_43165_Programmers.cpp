@@ -1,3 +1,9 @@
+/*
+	백준 주소 : https://www.acmicpc.net/problem/1181
+	난이도 : 실버5
+	문제 이름 : 단어 정렬
+*/
+
 #include <iostream>
 #include <set>
 #include <string>
@@ -25,7 +31,6 @@ int main()
 		std::cin >> tmp;
 		v.push_back(tmp);
     }
-    //v.erase(std::unique(v.begin(), v.end()), v.end());
     std::sort(v.begin(), v.end(), compare);
 	for (int i = 0; i < num; ++i)
 	{
@@ -34,10 +39,4 @@ int main()
 		std::cout << v[i] << std::endl;
 	}
 
-	//std::cout << "====================================\n";
-    //std::set<std::string>		res(v.begin(), v.end());
-    //for (std::set<std::string>::const_iterator it = res.begin(); it != res.end(); ++it)
-	//{
-	//	std::cout << *it << std::endl;
-	//}
 }
