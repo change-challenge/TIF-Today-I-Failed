@@ -5,64 +5,35 @@
 */
 
 #include <iostream>
-#include <vector>
-#include <queue>
-#include <string>
 
 const int MAX = 500;
 
 int		M, N;
 int		map[MAX][MAX];
-int		visited[MAX][MAX];
+int		dp[MAX][MAX];
+int		mx[4] = {0, 0, 1, -1};
+int		my[4] = {1, -1, 0, 0};
 
-
-int	bfs(int x, int y)
+int	dfs(int x, int y)
 {
-	int									res(0), max(0);
-	std::queue<std::pair<int, int> >	q;
-
-	q.push(std::make_pair(x, y));
-	visited[y][x]++;
-	while(!q.empty())
+	if (x == N - 1 && y == M - 1)
+		return 1;
+	if (dp[y][x] != -1)
+		return dp[y][x];
+	dp[y][x] = 0;
+	for (int i = 0 ; i < 4; i++)
 	{
-		int size = q.size();
-		max = size > max ? size : max;
-		//std::cout << "========size : " << size << "\n";
-		while(size--)
+		int nx = x + mx[i];
+		int ny = y + my[i];
+		if (nx >= 0 && nx < N - 1 && ny >= 0 && ny < M - 1)
 		{
-			int m_x = q.front().first;
-			int m_y = q.front().second;
-			q.pop();
-			//std::cout << "m_x : " << m_x << " m_y : "<< m_y << " => " << map[m_y][m_x] <<  "\n";
-
-			if (m_x == N - 1 && m_y == M - 1)
+			if (map[y][x] > map[ny][nx])
 			{
-				res++;
-				continue;
-			}
-			if (m_x + 1 < N && visited[m_y][m_x + 1] <= max && map[m_y][m_x + 1] < map[m_y][m_x])
-			{
-				q.push(std::make_pair(m_x + 1, m_y));
-				visited[m_y][m_x + 1]++;
-			}
-			if (m_y + 1 < M && visited[m_y + 1][m_x] <= max && map[m_y + 1][m_x] < map[m_y][m_x])
-			{
-				q.push(std::make_pair(m_x, m_y + 1));
-				visited[m_y + 1][m_x]++;
-			}
-			if (m_x - 1 >= 0 && visited[m_y][m_x - 1] <= max && map[m_y][m_x - 1] < map[m_y][m_x])
-			{
-				q.push(std::make_pair(m_x - 1, m_y));
-				visited[m_y][m_x - 1]++;
-			}
-			if (m_y - 1 >= 0 && visited[m_y - 1][m_x] <= max && map[m_y - 1][m_x] < map[m_y][m_x])
-			{
-				q.push(std::make_pair(m_x, m_y - 1));
-				visited[m_y - 1][m_x]++;
+				dp[y][x] += dfs(nx, ny);
 			}
 		}
 	}
-	return res;
+	return dp[y][x];
 }
 
 int main()
@@ -73,7 +44,8 @@ int main()
 		for (int j = 0; j < N; j++)
 		{
 			std::cin >> map[i][j];
+			dp[i][j] = -1;
 		}
 	}
-	std::cout << bfs(0, 0);
+	std::cout << dfs(0, 0);
 }
